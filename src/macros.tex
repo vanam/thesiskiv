@@ -1,0 +1,89 @@
+%
+% Draw black "slugs" whenever a line overflows, so that we can spot it easily.
+%
+\overfullrule=1cm
+
+% Fix Package inputenc Error: Unicode char ≈ (U+2248) not set up for use with LaTeX.
+\DeclareUnicodeCharacter{2248}{$\approx$}
+
+%%% The field of all real and natural numbers
+\DeclareMathOperator{\R}{\mathbb{R}}
+% \DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+
+\DeclareMathOperator{\X}{\textbf{X}}            % Data matrix
+\DeclareMathOperator{\Sc}{\textbf{S}}           % Scatter matrix
+\DeclareMathOperator{\x}{\textbf{x}}            % Data vector
+\DeclareMathOperator{\priorm}{\textbf{m}}       % Prior mean
+\DeclareMathOperator{\params}{\bm{\theta}}      % Parameters
+\DeclareMathOperator{\mean}{\bm{\mu}}           % Mean
+\DeclareMathOperator{\emean}{\bar{\x}}          % Empirical mean
+\DeclareMathOperator{\cov}{\mathbf{\Sigma}}     % Covariance matrix (Note: Sigma not bold when using \bm...)
+\DeclareMathOperator{\icov}{\mathbf{\Lambda}}   % Inverse Covariance matrix
+\DeclareMathOperator{\covt}{\text{cov}\,}       % Covariance matrix (text)
+\DeclareMathOperator{\ca}{\textbf{c}}           % Customer assignments
+\DeclareMathOperator{\z}{\textbf{z}}            % Table assignments
+\DeclareMathOperator{\stud}{\mathcal{T}\,}      % Student's t-distribution
+\DeclareMathOperator{\ind}{\mathbb{I}}          % Indicator function
+\DeclareMathOperator{\bet}{B\,}                 % Beta distribution
+\DeclareMathOperator{\dir}{\text{Dir}\,}        % Dirichlet distribution
+\DeclareMathOperator{\cat}{\text{Cat}\,}        % Categorical distribution
+\DeclareMathOperator{\mult}{\text{Mu}\,}        % Multinomial distribution
+\DeclareMathOperator{\norm}{\mathcal{N}\,}      % Normal distribution
+\DeclareMathOperator{\wi}{\text{Wi}\,}          % Wishart distribution
+\DeclareMathOperator{\iw}{\text{IW}\,}          % Inverse Wishart distribution
+\DeclareMathOperator{\niw}{\text{NIW}\,}        % Normal Inverse Wishart
+\DeclareMathOperator{\aic}{\text{AIC}\,}        % Akaike information criterion
+\DeclareMathOperator{\bic}{\text{BIC}\,}        % Bayesian information criterion
+\DeclareMathOperator{\clusters}{\mathbf{\Omega}}% Set of clusters
+\DeclareMathOperator{\classes}{\textbf{C}}      % Set of classes
+\DeclareMathOperator{\purity}{\text{purity}\,}  % Purity measure
+\DeclareMathOperator{\rand}{\text{RI}\,}        % Rand index
+\DeclareMathOperator{\mi}{\text{I}\,}           % Mutual information
+\DeclareMathOperator{\entropy}{\text{H}\,}      % Entropy
+\DeclareMathOperator{\nmi}{\text{NMI}\,}        % Normalized mutual information
+\DeclareMathOperator{\homogeneity}{h}           % Homogeneity
+\DeclareMathOperator{\completeness}{c}          % Completeness
+\DeclareMathOperator{\vmeasure}{V}              % V-measure
+\DeclareMathOperator{\nvmeasure}{NV}            % NV-measure
+\DeclareMathOperator{\precision}{P\,}           % Precision
+\DeclareMathOperator{\recall}{R\,}              % Recall
+\DeclareMathOperator{\fmeasure}{F}              % F-measure
+\DeclareMathOperator{\tp}{T\!P}                 % True positive
+\DeclareMathOperator{\tn}{T\!N}                 % True negative
+\DeclareMathOperator{\fp}{F\!P}                 % False positive
+\DeclareMathOperator{\fn}{F\!N}                 % False negative
+
+%%% Useful operators for statistics and probability
+\DeclareMathOperator{\pr}{p}
+\DeclareMathOperator{\E}{\mathbb{E}\,}
+% \DeclareMathOperator{\var}{\textrm{var}}
+% \DeclareMathOperator{\sd}{\textrm{sd}}
+\DeclareMathOperator{\tr}{\textrm{tr}}   % Trace of a matrix
+
+%%% Transposition of a vector/matrix
+\newcommand{\T}[1]{#1^\top}
+
+%%% Various math goodies
+\newcommand{\goto}{\rightarrow}
+\newcommand{\gotop}{\stackrel{P}{\longrightarrow}}
+\newcommand{\maon}[1]{o(n^{#1})}
+\newcommand{\abs}[1]{\left|{#1}\right|}
+\newcommand{\dett}[1]{\left|{#1}\right|}
+\newcommand{\dint}{\int_0^\tau\!\!\int_0^\tau}
+\newcommand{\isqr}[1]{\frac{1}{\sqrt{#1}}}
+
+%%% Various table goodies
+\newcommand{\pulrad}[1]{\raisebox{1.5ex}[0pt]{#1}}
+\newcommand{\mc}[1]{\multicolumn{1}{c}{#1}}
+
+%%% argmin/argmax      https://tex.stackexchange.com/questions/5223/command-for-argmin-or-argmax
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+% Small matrix with () surrounding
+\newenvironment{psmallmatrix}
+  {\left(\begin{smallmatrix}}
+  {\end{smallmatrix}\right)}
+
+\newcommand{\cpp}{C\texttt{++} }

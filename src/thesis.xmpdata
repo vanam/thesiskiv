@@ -1,0 +1,9 @@
+% Metadata to be stored in PDF, see documentation of the pdfx package for more details.
+
+\Title{Thesis title}
+\Author{J. Doe}
+\Publisher{University of West Bohemia}
+\Keywords{keyword\sep another keyword}
+\Subject{%
+English abstract%
+}

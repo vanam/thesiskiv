@@ -1,0 +1,132 @@
+% The master thesis -- Incremental news clustering
+% ---------------------------------------------------------------------
+% Martin Váňa - spring 2018
+
+\RequirePackage[l2tabu, orthodox]{nag}		% Warns for incorrect (obsolete) LaTeX usage
+
+% \documentclass[english,DP, draft]{thesiskiv} % [draft]
+% \documentclass[english,DP,onesideprinting]{thesiskiv}
+\documentclass[english,DP]{thesiskiv}
+
+% Choose gender
+\declarationmale
+%\declarationfemale
+
+%\makeatletter
+\author          {John Doe}
+\title           {Thesis title\\ at most on\\ three lines}
+
+\abstracttexten  {%
+The text of the abstract (in English). It contains the English translation of
+the thesis title and a short description of the thesis.%
+}
+\abstracttextcz  {%
+Text abstraktu (česky). Obsahuje krátkou anotaci (cca 10 řádek) v češtině.
+Budete ji potřebovat i při vyplňování údajů o bakalářské práci ve STAGu.
+Český i anglický abstrakt by měly být na stejné stránce a měly by si obsahem
+co možná nejvíce odpovídat (samozřejmě není možný doslovný překlad!.%
+}
+
+\acknowledgement {%
+I would like to thank my thesis supervisor John Doe, PhD.
+for his beneficial advice and comments on this thesis.%
+}
+
+% Override default values
+%\university      {University of West Bohemia}
+%\faculty         {Faculty of Applied Sciences}
+%\department      {Department of Computer Science and Engineering}
+%\subject         {Master’s Thesis}
+\titlepagetown   {Pilsen}
+\declarationtown {Pilsen}
+% \titlepageyear   {2018}
+% \declarationdate {11th May 2018}
+% \specificationfile{specification.pdf}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% DODATEČNÉ BALÍČKY PRO SAZBU
+% Jejich užívání či neužívání záleží na libovůli autora
+% práce
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \usepackage[notref,notcite]{showkeys} % show 'internal' keys when writing
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+% activate={true,nocompatibility} - activate protrusion and expansion
+% final - enable microtype; use "draft" to disable
+% tracking=true, kerning=true, spacing=true - activate these techniques
+% factor=1100 - add 10% to the protrusion amount (default is 1000)
+% stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
+
+%% Generate PDF/A-2u
+\usepackage[a-2u]{pdfx}
+
+% Odkazy v PDF jsou aktivní; navíc se automaticky vkládá
+% balíček 'url', který umožňuje např. dělení slov
+% uvnitř URL
+\usepackage[pdftex]{hyperref}
+\hypersetup{colorlinks=true,
+  pdfencoding=auto,
+  unicode=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black,
+  final,
+  bookmarksopen=true}
+
+\usepackage{amsmath}        % extensions for typesetting of math
+\usepackage{amsfonts}       % math fonts
+\usepackage{amsthm}         % theorems, definitions, etc.
+\usepackage{bbding}         % various symbols (squares, asterisks, scissors, ...)
+\usepackage{bm}             % boldface symbols (\bm)
+\usepackage{graphicx}       % embedding of pictures
+\usepackage{fancyvrb}       % improved verbatim environment
+\usepackage[numbers,sort&compress]{natbib} % citation style AUTHOR (YEAR), or AUTHOR [NUMBER]
+\usepackage[nottoc]{tocbibind} % makes sure that bibliography and the lists
+			    % of figures/tables are included in the table
+			    % of contents
+\usepackage{dcolumn}        % improved alignment of table columns
+\usepackage{booktabs}       % improved horizontal lines in tables
+\usepackage{tabularx}       % improved tables
+% \usepackage{paralist}       % improved enumerate and itemize
+\usepackage{import}         % allows importing chapters
+\usepackage[printonlyused]{acronym} % acronyms
+\usepackage{flafter}         % figures only appear after their first use, never ever before
+\usepackage{algorithm}      % algorithm typesetting
+\usepackage{algpseudocode}
+\usepackage{tikz}           % TikZ graphics
+\usepackage{multirow}       % Multirow cell in tables
+\usepackage[makeroom]{cancel} % Cancel stuff in equations
+\usepackage[final]{listings}       % List source code
+\usepackage[tableposition=top]{caption} % Place table captions above the table with correct vertical skip
+
+
+% Definitions of macros (see description inside)
+\include{macros}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% THESIS CONTENT
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+  \makefront
+
+  \import{chapters/}{introduction.tex}
+  \import{chapters/foo/}{_chapter.tex}
+  \import{chapters/}{conclusion.tex}
+
+  %%% Bibliography
+  \include{bibliography}
+
+  % And the appendix goes here
+  \appendix
+  \import{chapters/appendices/}{notation.tex}
+  \import{chapters/appendices/}{acronyms.tex}
+  \import{chapters/appendices/}{user-manual.tex}
+  \import{chapters/appendices/}{experiments.tex}
+
+\end{document}
