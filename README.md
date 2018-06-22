@@ -12,7 +12,7 @@ The template is inspired by templates:
 ## Run with Docker
 
 1) Install Docker
-2) Build image `docker build -t vanam/texlive-2017 .` using `Dockerfile`
+2) Build image `docker build -t vanam/texlive-2018 .` using `Dockerfile`
 3) Run `./docker-run.sh`
 4) (Re)compile by `make clean && make` command
 
